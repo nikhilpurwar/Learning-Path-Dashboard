@@ -1,0 +1,114 @@
+Folder PATH listing
+Volume serial number is 347A-B400
+C:.
+|   directory_structure.txt
+|   
++---Admin
+|   |   add_course.php
+|   |   auth.php
+|   |   dashboard.html
+|   |   dashboard.js
+|   |   get_progress.php
+|   |   login.html
+|   |   login_signup.html
+|   |   logout.php
+|   |   schema.sql
+|   |   signup.html
+|   |   style.css
+|   |   
+|   \---uploads
+|           539_CA1.pdf
+|           539_CA2.pdf
+|           Beginners_Guide_to_HTML.pdf
+|           cpp fundamentals.png
+|           css_display.jpg
+|           flutter.png
+|           htmlBasics.png
+|           rogramming_Fundamentals_in_C++.pdf
+|           Screenshot (8).png
+|           Screenshot 2024-08-28 161830.png
+|           
++---Asset
+|   |   bg-main.png
+|   |   bg.png
+|   |   bg1.png
+|   |   bg1.webp
+|   |   bg2.png
+|   |   bg3.png
+|   |   bg4.png
+|   |   bg5.png
+|   |   hero-bg.png
+|   |   image.png
+|   |   logo.png
+|   |   logo1.png
+|   |   user.png
+|   |   
+|   \---Courses
+|           AI.png
+|           cpp.png
+|           css.png
+|           flutter.png
+|           html.png
+|           java.png
+|           js.png
+|           mern.png
+|           ml.png
+|           pandas.png
+|           python.png
+|           react-native.png
+|           
++---Backend
+|   |   .env
+|   |   browseCourses.php
+|   |   check_auth.php
+|   |   continueCourse.php
+|   |   dashboard.php
+|   |   db.php
+|   |   enroll.php
+|   |   fetch_courses.php
+|   |   get_courses.php
+|   |   get_profile_pic.php
+|   |   index.php
+|   |   login.php
+|   |   logout.php
+|   |   profile.php
+|   |   signup.php
+|   |   update_progress.php
+|   |   update_rating.php
+|   |   
+|   +---includes
+|   |       session_check.php
+|   |       
+|   \---uploads
+|           67f79e56d067a_myphoton200kb (1).jpg
+|           6808dae45b33d_photo.jpg
+|           6808e21371963_myphoton200kb (1).jpg
+|           6808e2dbbff66_myphoton200kb (1).jpg
+|           6808e3990e578_myphoton200kb (1).jpg
+|           6808e545283f7_photo.jpg
+|           6808e54a84e2d_photo.jpg
+|           6808e5544477c_photo.jpg
+|           6808e6915b292_signature.jpg
+|           6808e70518193_Screenshot 2025-04-23 184056.png
+|           68092444defb9_Screenshot 2024-08-28 155134.png
+|           680924897f05c_Screenshot 2024-08-28 155134.png
+|           6809280dc4223_Screenshot 2025-04-23 184056.png
+|           680a1e4c89ec0_Screenshot 2024-08-28 155134.png
+|           680ce5abd0366_Screenshot 2025-04-23 184056.png
+|           
+\---FrontEnd
+    |   index.html
+    |   script.js
+    |   styles.css
+    |   
+    \---User Dashboard
+            app.py
+            app2.py
+            dashboard.css
+            dashboard.js
+            dashboard.php
+            dashboard0.js
+            dashboard1.js
+            dashboard2.js
+            styles.css
+            

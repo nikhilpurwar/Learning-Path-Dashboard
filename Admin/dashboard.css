@@ -1,0 +1,116 @@
+Neo-Pop Inspired CSS
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    color: #1a1a1a;
+  }
+  
+  header {
+    background: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav
+  {
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+  }
+  a{
+      font-size: large;
+      font-weight: bolder;
+      text-decoration:none;
+      color: black;
+  }
+  h1, h2 {
+    margin: 0;
+    font-weight: 700;
+    color: #333;
+  }
+  nav{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  nav button {
+    padding: 0.5rem 1rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 8px 8px 0px #ff595e;
+    border: 2px solid #000;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  input, #description{
+    margin-bottom: 1%;
+    width: 50%;
+  }
+  #category{
+    width: 13%;
+  }
+  input, button,#category{
+    font-size: 1rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 2px solid #000;
+  }
+  label {
+    font-size: 1.5rem;
+    padding: 0.6rem;
+  }
+  
+  input[type="file"] {
+    background-color: #eee;
+  }
+  
+  button[type="submit"] {
+    background: #ffca3a;
+    border: 2px solid #000;
+    color: #000;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 10%;
+  }
+  
+  button[type="submit"]:hover {
+    background: #8ac926;
+  }
+  
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #progressData {
+    min-height: 100px;
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+  }

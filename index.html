@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पढो - Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://kit.fontawesome.com/d079fc9b63.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="navbar-brand">
+                <a href="#"><img src="Asset/logo.png" alt="पढो Logo" width="40" height="40"></a>
+            </div>
+            
+            <div class="nav-links" id="nav-links">
+                <a class="nav" href="#"><img class="nav-icon" width="40" height="40" src="https://img.icons8.com/external-creatype-flat-colourcreatype/64/external-home-user-interface-creatype-flat-colourcreatype.png" alt="external-home-user-interface-creatype-flat-colourcreatype"/><p>Home</p></a>
+                <a class="nav" href="#about-us"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="54" height="54" viewBox="0 0 64 64">
+                    <linearGradient id="mcwB~XdTp9tq2ylZRSm3ma_43969_gr1" x1="32" x2="32" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3ma_43969_gr1)" d="M58,19.001c0-3.566-1.415-6.892-3.985-9.366c-2.569-2.473-5.962-3.766-9.521-3.624 c-6.745,0.256-12.228,5.739-12.484,12.484C32.003,18.664,32.016,19,32.016,19H22c-8.822,0-16,7.178-16,16 c0,8.667,6.927,15.746,15.535,15.993l5.097,5.927C27.204,57.606,28.067,58,29,58c0.933,0,1.796-0.394,2.357-1.067l5.107-5.939 C45.073,50.746,52,43.667,52,35c0-1.01-0.1-2-0.287-3H58V19.001z M50,35c0,7.72-6.28,14-14,14h-0.459l-5.71,6.641 c-0.381,0.457-1.27,0.47-1.673-0.013L22.459,49H22c-7.72,0-14-6.28-14-14s6.28-14,14-14h10.157c0.402,3,1.592,5.057,3.477,7.016 C38.107,30.585,41.433,32,45,32h4.673C49.886,33,50,33.987,50,35z M56,30H45c-3.018,0-5.832-1.197-7.926-3.372 c-2.092-2.173-3.181-5.035-3.066-8.057C34.221,12.96,38.959,8.221,44.57,8.008c0.145-0.005,0.289-0.008,0.433-0.008 c2.862,0,5.556,1.083,7.625,3.074C54.803,13.169,56,15.983,56,19.001V30z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mb_43969_gr2" x1="45" x2="45" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mb_43969_gr2)" d="M45 23A2 2 0 1 0 45 27A2 2 0 1 0 45 23Z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mc_43969_gr3" x1="27" x2="27" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mc_43969_gr3)" d="M24 26H30V28H24z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3md_43969_gr4" x1="29" x2="29" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3md_43969_gr4)" d="M24 30H34V32H24z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3me_43969_gr5" x1="31" x2="31" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3me_43969_gr5)" d="M24 34H38V36H24z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mf_43969_gr6" x1="29" x2="29" y1="5.335" y2="59.506" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mf_43969_gr6)" d="M12 38H46V40H12z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mg_43969_gr7" x1="29" x2="29" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mg_43969_gr7)" d="M19 42H39V44H19z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mh_43969_gr8" x1="45" x2="45" y1="5.333" y2="59.507" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mh_43969_gr8)" d="M45,12c-2.206,0-4,2-4,4h2c0-1,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2h-1v3h2v-1.126 c1-0.444,3-2.013,3-3.873C49,13.794,47.206,12,45,12z"></path><linearGradient id="mcwB~XdTp9tq2ylZRSm3mi_43969_gr9" x1="16" x2="16" y1="25.834" y2="36.835" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#mcwB~XdTp9tq2ylZRSm3mi_43969_gr9)" d="M20,36h-8v-2c0-4.418,3.582-8,8-8h0V36z"></path>
+                    </svg><p>About</p></a>
+                <a class="nav" href="#featured-courses"><img class="nav-icon" width="48" height="48" src="https://img.icons8.com/nolan/64/knowledge-sharing.png" alt="knowledge-sharing"/><p>Courses</p></a>
+                <a class="nav" href="#contact-us"><img class="nav-icon" width="48" height="48" src="https://img.icons8.com/emoji/48/call-me-hand-light-skin-tone.png" alt="call-me-hand-light-skin-tone"/><p>Contact Us</p></a>
+            </div>
+            <div id="mob-buttons">
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="user-buttons">
+                    <button id="loginButton" class="loginButton user" onclick="openModal('loginModal')" ><p>Login</p> <i class="fa-solid fa-right-to-bracket fa-rotate-180" style="color: #ffffff;"></i></button>
+                    <button class="signupButton user" onclick="openModal('signupModal')"><p>Sign Up</p> <i class="fa-solid fa-right-to-bracket" style="color: white;"></i></button>
+                </div>
+            </div>
+        </nav>      
+    </header>
+    <div class="neo-pop-nav" id="neo-pop-nav">
+        <a class="nav-link" href="#home">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/star--v1.png" alt="Home Icon" />
+            </div>
+            <p class="link-text">Home</p>
+            <span class="nav-pulse"></span>
+        </a>
+        <a class="nav-link" href="#about-us">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/info-squared.png" alt="About Icon" />
+            </div>
+            <p class="link-text">About</p>
+            <span class="nav-pulse"></span>
+        </a>
+        <a class="nav-link" href="#featured-courses">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/book-shelf.png" alt="Courses Icon" />
+            </div>
+            <p class="link-text">Courses</p>
+            <span class="nav-pulse"></span>
+        </a>
+        <a class="nav-link" href="#contact-us">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/speech-bubble-with-dots.png" alt="Contact Icon" />
+            </div>
+            <p class="link-text">Contact</p>
+            <span class="nav-pulse"></span>
+        </a>
+        <a class="nav-link highlight" href="#login" onclick="openModal('loginModal')">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/fingerprint--v1.png" alt="Login Icon" />
+            </div>
+            <p class="link-text">Login</p>
+            <span class="nav-pulse"></span>
+        </a>
+        <a class="nav-link highlight" href="#signup" onclick="openModal('signupModal')">
+            <div class="icon-wrapper">
+                <img class="nav-icon" src="https://img.icons8.com/fluency/96/add-user-male--v2.png" alt="Sign Up Icon" />
+            </div>
+            <p class="link-text">Sign Up</p>
+            <span class="nav-pulse"></span>
+        </a>
+    </div>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Welcome Back!</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <input type="text" id="loginInput" name="loginInput" placeholder="Username, Email, or Phone" required>
+                <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                <button type="submit" onclick="">Login</button>
+                <a href="#" onclick="openModal('signupModal')">Don't have an account?</a>
+            </form>
+        </div>
+    </div>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+    
+            <!-- Alert Section -->
+            <div id="alert" class="alert"></div>
+    
+            <form id="signupForm" onsubmit="handleRegister(event)" action="javascript:void(0);" method="POST">
+
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone No. (10 digits)" pattern="[0-9]{10}" required>
+                <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+                <a href="#" onclick="openModal('loginModal')">Already have an account?</a>
+            </form>
+    
+            <div class="google-signin">
+                <button id="googleSignInButton" type="button">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" />
+                    Sign Up with Google
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="connect">
+        <a href="mailto:npnikhilpurwar@gmai.com"><i class="fa-solid fa-envelope-circle-check fa-shake fa-2xl"></i></a>
+        <a href="tel:+919120734998"><i class="fa-solid fa-phone fa-shake fa-2xl"></i></a>
+    </div>
+    
+    <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Unlock Your Potential with पढो</h1>
+            <p>Learn, Practice, and Master New Skills.</p>
+            <div class="hero-buttons">
+                <a href="#featured-courses" class="btn-primary">Explore Courses</a>
+                <button class="signupButton btn-secondary" onclick="openModal('signupModal')">Get Started</button>
+            </div>
+            <div id="toAdmin" class="tootip">
+                <a href="Admin/login.html">Are you a Learning Path Creator</a>
+                <span class="tooltip-text">This is only for Learning Path Creator</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-courses" id="featured-courses">
+        <h2>Featured Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            
+            <!-- Remaining courses (hidden by default) -->
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/java.png" alt="Java">
+                <h3>Java Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/cpp.png" alt="C++ Course">
+                <h3>C++ Programming</h3>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-card hidden-course">
+                <img src="Asset/Courses/mern.png" alt="MERN Stack">
+                <h3>MERN Stack</h3>
+                <button>Enroll Now</button>
+            </div>
+        </div>
+        <button id="view-all-btn" class="view-all-btn">View All Courses</button>
+    </section>
+
+   <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-carousel">
+                <div class="testimonial-card">
+                    <p>"पढो helped me master new skills quickly. Highly recommended!"</p>
+                    <h4>- John Doe</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The courses are well-structured and easy to follow."</p>
+                    <h4>- Jane Smith</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I landed my dream job thanks to पढो!"</p>
+                    <h4>- Alice Johnson</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about-us">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>पढो is a leading online learning platform dedicated to helping individuals unlock their potential through interactive courses and expert guidance.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Asset/user.png" alt="Team Member 1">
+                    <h4>Sonal Kumari </h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="Asset/user.png" alt="Team Member 2">
+                    <h4>Deepali</h4>
+                    <p>Lead Instructor</p>
+                </div>
+                <div class="team-member">
+                    <img src="Asset/user.png" alt="Team Member 3">
+                    <h4>Nikhil Purwar</h4>
+                    <p>Content Strategist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us" id="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <form class="contact-form" action="https://formspree.io/f/xgvaargq" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.869260146034!2d77.2122153150815!3d28.57225998244103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2a99b6f9fa7%3A0x83a25e55f0af1c82!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1632912345678!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div id="foot">
+        <!-- Left Section -->
+        <div class="footRow row mx-5">
+            <div class="col">
+                <p class="text-light">Made with ❤️ in India <br> By Nikhil Purwar</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f fa-bounce fa-2xl" style="color: #fcfcfd;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-beat fa-2xl" style="color: #fcfcfd;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in fa-beat-fade fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-bounce fa-2xl" style="color: #ffffff;"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-shake fa-2xl" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="col mt-3 text-end">
+                <a href="#" class="d-block text-light">About Us</a>
+                <a href="#" class="d-block text-light">Privacy Policy, T&C, and R&C</a>
+            </div>
+        </div>
+
+        <hr class="my-4 hr-tag">
+
+        <!-- Bottom Section -->
+        <div class="footRow row mx-5">
+            <div class="col">
+                <img src="Asset/logo.png" alt="App Logo" height="50px" width="50px">
+                <p class="text-light">A product of DNS<br>© Since 2025 Clarity. All Rights Reserved.</p>
+            </div>
+            <div class="col text-end text-light">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Itaque at accusantium deserunt nihil distinctio. Deleniti eligendi odit ratione deserunt iure. <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, tempore?
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+        const app = initializeApp({
+            apiKey: "AIzaSyC16EukHxuBHx2A4-bYPz76tZ14YJ8ht_E",
+            authDomain: "learning-path-dashboard-74e1b.firebaseapp.com",
+            projectId: "learning-path-dashboard-74e1b",
+            storageBucket: "learning-path-dashboard-74e1b.firebasestorage.app",
+            messagingSenderId: "215128763692",
+            appId: "1:215128763692:web:71f5d244dbb576545a9089"
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+</body>
+</html>

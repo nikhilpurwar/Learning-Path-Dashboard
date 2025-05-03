@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeoPop Learning Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+  <header class="neopop-header">
+    <h1><i class="fas fa-graduation-cap"></i> Learning Dashboard</h1>
+    <nav>
+      <a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="monitor.php" class="nav-link"><i class="fas fa-chart-line"></i> Dashboard</a>      
+      <button id="logoutBtn" title="Logout from your account">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Course Statistics -->
+    <section id="courseOverview">
+      <h2><i class="fas fa-chart-pie"></i> Active Course Stats</h2>
+      <p class="section-desc">Track your enrolled courses, completion rates, and progress trends over time.</p>
+      <canvas id="courseChart"></canvas>
+    </section>
+
+    <!-- Create Learning Path -->
+    <section id="learningPath">
+      <h2><i class="fas fa-road"></i> Create Your Learning Path</h2>
+      <p class="section-desc">Add courses with relevant resources to build a personalized learning journey.</p>
+      <form id="pathForm" method="POST" enctype="multipart/form-data">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g., HTML, CSS, JS, PHP" required />
+
+        <label for="courseName">Course Title</label>
+        <input type="text" id="courseName" name="title" placeholder="e.g., HTML Fundamentals" required />
+      
+        <label for="author">Author Name</label>
+        <input type="text" id="author" name="author" placeholder="e.g., Sarah Johnson" required />
+      
+        <label for="description">Course Description</label>
+        <textarea id="description" name="description" rows="3" placeholder="Course overview..." required></textarea>
+      
+        <label for="price">Course Price</label>
+        <input type="number" id="price" name="price" placeholder="e.g., 29.99" step="0.01" required />
+      
+        <label for="category">Category / Domain</label>
+        <select id="category" name="category" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Programming">Programming</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Mobile Development">Mobile Development</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+        </select>
+      
+        <label for="videoLink">YouTube Video Link</label>
+        <input type="url" id="videoLink" name="video_link" placeholder="https://youtube.com/..." />
+      
+        <label for="resourceLink">External Resource Link</label>
+        <input type="url" id="resourceLink" name="resource_link" placeholder="https://example.com/docs" />
+      
+        <label for="uploadResource">Upload PDF/Docs</label>
+        <input type="file" id="uploadResource" name="upload_resource" accept=".pdf,.docx,.pptx" />
+      
+        <label for="courseImage">Course Image</label>
+        <input type="file" id="courseImage" name="image" accept="image/*" />
+      
+        <button type="submit">Add Course</button>
+      </form>
+      
+    </section>
+
+    <!-- Progress Overview -->
+    <section id="userProgress">
+      <h2><i class="fas fa-chart-line"></i> Learner Progress</h2>
+      <p class="section-desc">Visualize what you've completed and track your growth across different learning paths.</p>
+      <div id="progressData">
+        <!-- Will be dynamically populated -->
+        <p class="empty-progress">Progress data will appear once you start learning.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="neopop-footer">
+    <p>🚀 Keep learning. Keep growing. Powered by <strong>NeoPop UI</strong>.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
