@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2025 at 08:06 PM
+-- Generation Time: May 06, 2025 at 09:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `ausers` (
 INSERT INTO `ausers` (`id`, `username`, `password`) VALUES
 (1, 'Nikhil', '$2y$10$4NgdL1VCJ8JEwjo2lfuYMuBoIZ718ISYa8Af8pEyijydskfIP6xtm'),
 (2, 'sonal', '$2y$10$o7/GrhPP/JUubr3EYHMvkuDeysa4pIEZWVE6.fEWZYukmk/ZZb85W'),
-(4, 'admin', '$2y$10$0a9tNYe/6wDQ9ea0hOrbcudV90HXbDzG/I6E.h8QpZ3y5GVvel61W');
+(4, 'admin', '$2y$10$0a9tNYe/6wDQ9ea0hOrbcudV90HXbDzG/I6E.h8QpZ3y5GVvel61W'),
+(5, 'deepali', '$2y$10$m3Jl7XKuVuPGTWpNmMwygenzwyB5J7Qtf89rS4HDZqIhep.KAAGWG');
 
 -- --------------------------------------------------------
 
@@ -71,10 +72,11 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title`, `author`, `description`, `image`, `video_link`, `resource_link`, `upload_resource`, `category`, `rating`, `rating_count`, `price`, `created_at`, `subject`, `PrimaryID`) VALUES
-(14, 'Flutter for intermediate', 'Rakesh Singh', 'Flutter is an open-source UI software development kit created by Google.', 'flutter.png', 'https://www.youtube.com/embed/esnBf6V4C34?si=PFgW7yJmmtRcPZEr', 'https://www.geeksforgeeks.org/what-is-flutter/', '', 'Mobile Development', 0, 0, 450.00, '2025-04-26 18:35:34', 'Flutter', 40),
-(14, 'HTML Crash Course', 'Rakesh Singh', 'HTML (HyperText Markup Language) is the most basic building block of the Web.', 'htmlBasics.png', NULL, 'https://developer.mozilla.org/en-US/docs/Web/HTML', 'Beginners_Guide_to_HTML.pdf', 'Web Development', 3.6842, 19, 400.00, '2025-04-26 18:39:17', 'HTML', 41),
-(9, 'CSS - Display property', 'Nikhil Purwar', 'Display proerty - flex, block, position,... etc..', 'css_display.jpg', 'https://www.youtube.com/embed/YjWktudqGN4?si=jGR_2PregayVJbJK\"title=\"YouTubevideoplayer', 'https://www.w3schools.com/cssref/pr_class_display.php', '', 'Web Development', 0, 0, 100.00, '2025-04-27 11:41:28', 'CSS', 45),
-(9, 'CPP Fundamentals', 'Nikhil Purwar', 'CPP basic language beginner friendly', 'cpp fundamentals.png', 'https://www.youtube.com/embed/MNeX4EGtR5Y?si=us9TCSqfo26EIl8_', 'https://www.geeksforgeeks.org/c-plus-plus/', 'cpp_tutorial.pdf', 'Programming', 0, 0, 200.00, '2025-04-27 14:18:18', 'CPP', 48);
+(1, 'Flutter for intermediate', 'Rakesh Singh', 'Flutter is an open-source UI software development kit created by Google.', 'flutter.png', 'https://www.youtube.com/embed/esnBf6V4C34?si=PFgW7yJmmtRcPZEr', 'https://www.geeksforgeeks.org/what-is-flutter/', '', 'Mobile Development', 0, 0, 450.00, '2025-04-26 18:35:34', 'Flutter', 40),
+(1, 'HTML Crash Course', 'Rakesh Singh', 'HTML (HyperText Markup Language) is the most basic building block of the Web.', 'htmlBasics.png', NULL, 'https://developer.mozilla.org/en-US/docs/Web/HTML', 'Beginners_Guide_to_HTML.pdf', 'Web Development', 3.6842, 19, 400.00, '2025-04-26 18:39:17', 'HTML', 41),
+(1, 'CSS - Display property', 'Nikhil Purwar', 'Display proerty - flex, block, position,... etc..', 'css_display.jpg', 'https://www.youtube.com/embed/YjWktudqGN4?si=jGR_2PregayVJbJK\"title=\"YouTubevideoplayer', 'https://www.w3schools.com/cssref/pr_class_display.php', '', 'Web Development', 0, 0, 100.00, '2025-04-27 11:41:28', 'CSS', 45),
+(1, 'CPP Fundamentals', 'Nikhil Purwar', 'CPP basic language beginner friendly', 'cpp fundamentals.png', 'https://www.youtube.com/embed/MNeX4EGtR5Y?si=us9TCSqfo26EIl8_', 'https://www.geeksforgeeks.org/c-plus-plus/', 'cpp_tutorial.pdf', 'Programming', 0, 0, 200.00, '2025-04-27 14:18:18', 'CPP', 48),
+(1, 'Python Basics', 'Deepali', '​Python is a versatile, high-level programming language known for its readability and simplicity.', 'Python+programming.png', 'https://www.youtube.com/embed/v9bOWjwdTlg?si=n7gRxLF78ZcPnMdd', 'https://www.geeksforgeeks.org/python-basics/', 'python.pdf', 'Programming', 0, 0, 300.00, '2025-04-28 09:55:22', 'Python', 49);
 
 -- --------------------------------------------------------
 
@@ -162,9 +164,9 @@ CREATE TABLE `user_courses` (
 
 INSERT INTO `user_courses` (`id`, `user_id`, `course_id`, `progress`, `enrolled_at`, `last_accessed`) VALUES
 (44, 9, 40, 10, '2025-04-26 17:24:29', '2025-04-27 16:23:29'),
-(46, 9, 41, 100, '2025-04-26 17:59:21', '2025-04-27 16:35:32'),
-(48, 9, 45, 10, '2025-04-27 06:25:22', '2025-04-27 16:00:41'),
-(49, 9, 48, 10, '2025-04-27 08:48:46', '2025-04-27 16:09:00');
+(49, 9, 48, 10, '2025-04-27 08:48:46', '2025-04-27 16:09:00'),
+(52, 8, 49, 10, '2025-04-28 04:28:42', '2025-04-28 09:59:18'),
+(57, 9, 41, 0, '2025-05-03 16:33:46', '2025-05-03 22:03:46');
 
 -- --------------------------------------------------------
 
@@ -248,13 +250,13 @@ ALTER TABLE `user_interests`
 -- AUTO_INCREMENT for table `ausers`
 --
 ALTER TABLE `ausers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `PrimaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `PrimaryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `newcourses`
@@ -278,7 +280,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_courses`
 --
 ALTER TABLE `user_courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- Constraints for dumped tables

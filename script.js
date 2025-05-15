@@ -152,6 +152,78 @@ async function handleRegister(event) {
     }
 }
 
+async function handleForgetPassword(event) {
+    event.preventDefault();
+    const form = event.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    if (!form.username.value || !form.email.value || !form.phone.value || !form.password.value) {
+        showAlert('All fields are required', 'error');
+        return;
+    }
+
+    if (!validateEmail(form.email.value)) {
+        showAlert('Please enter a valid email address', 'error');
+        return;
+    }
+
+    // if (!validatePhoneNumber(form.phone.value)) {
+    //     showAlert('Please enter a 10-digit phone number', 'error');
+    //     return;
+    // }
+
+    if (form.password.value.length < 8) {
+        showAlert('Password must be at least 8 characters', 'error');
+        return;
+    }
+
+    if (form.password.value !== form.confirmPassword.value) {
+        showAlert('Passwords do not match', 'error');
+        return;
+    }
+
+    try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span> Signing Up...';
+
+        const formData = new FormData(form);
+        const plainFormData = Object.fromEntries(formData.entries());
+
+        const response = await fetch('./Backend/signup.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' ,
+                        'X-Requested-With': 'XMLHttpRequest' 
+            },
+            body: JSON.stringify(plainFormData),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => null);
+            throw new Error(errorData?.message || 'Registration failed');
+        }
+
+        const data = await response.json();
+
+        if (!data.success) {
+            throw new Error(data.message || 'Registration failed');
+        }
+
+        showAlert('Registration successful! Redirecting...', 'success');
+
+        // Redirect to index.html after a short delay
+        setTimeout(() => {
+            closeModal('signupModal');
+            openModal('loginModal');
+        }, 1000);
+
+    } catch (error) {
+        console.error('Registration error:', error);
+        showAlert(error.message || 'Registration failed. Please try again.', 'error');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign Up';
+    }
+}
 
 async function handleLogin(event) {
     event.preventDefault();

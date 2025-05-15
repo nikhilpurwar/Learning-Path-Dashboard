@@ -300,7 +300,7 @@ header.hide {
     z-index: -1;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 768px) {
     .hamburger {
         z-index: 2000; 
         display: flex;
@@ -610,7 +610,7 @@ main {
 
 
 /* Desktop View */
-@media (min-width: 1100px) {
+/* @media (min-width: 1100px) {
     .testimonial-carousel {
         display: flex;
         gap: 20px;
@@ -627,10 +627,10 @@ main {
         padding: 20px;
         text-align: center;
     }
-}
+} */
 
 /* Mobile View */
-@media (max-width: 1100px) {
+@media (max-width: 768px) {
     .testimonial-carousel {
         display: flex;
         gap: 10px; 
@@ -852,7 +852,7 @@ main {
 }
 
 /* Modal Styles */
-#loginModal, #signupModal
+#loginModal, #signupModal, #forgetModal
 {
     height: 100vh;
     display: none;
@@ -861,12 +861,13 @@ main {
     background-color: transparent;
 
 }
-.modal-bg
+
+.modal
 {
-    background-color: rgba(0, 0, 0, 0.511);
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
-    height: 70vh;
+    /* background-color: rgba(0, 0, 0, 0.511); */
+    backdrop-filter: blur(50px); 
+    -webkit-backdrop-filter: blur(60px);
+    height: 100vh;
     width: 80%;
     display: flex; 
     align-items: center;
@@ -892,6 +893,8 @@ main {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
+    border-bottom: 2px solid rgb(110, 110, 192);
+
     border-radius: 5px;
 }
 
@@ -1102,6 +1105,7 @@ footer {
     {
         font-size: 40px;
     }
+    
 }
 
 .toast-message {
